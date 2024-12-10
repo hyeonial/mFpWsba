@@ -1,6 +1,6 @@
 function checkPassword() {
     const password = document.getElementById("password").value;
-    const correctPassword = "4792"; // 올바른 암호
+    const correctPassword = "4792"; // 올바른 pw
 
     if (password === correctPassword) {
         alert("correct answer. See you next level :D");
