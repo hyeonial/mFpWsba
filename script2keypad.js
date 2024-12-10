@@ -1,19 +1,40 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const inputField = document.getElementById('input-field');
-    const keys = document.querySelectorAll('.key');
+console.log("스크립트 로드 완료");
 
-    keys.forEach(key => {
-        key.addEventListener('click', function () {
-            const keyValue = key.getAttribute('data-key');
-            const action = key.getAttribute('data-action');
+const passwordInput = document.getElementById("passwordInput");
+const keys = document.querySelectorAll(".key");
+const clearButton = document.getElementById("clear");
+const submitButton = document.getElementById("submit");
+const feedback = document.getElementById("feedback");
 
-            if (action === 'clear') {
-                inputField.value = '';
-            } else if (action === 'submit') {
-                alert('입력된 값: ' + inputField.value);
-            } else if (keyValue) {
-                inputField.value += keyValue;
-            }
-        });
-    });
+let inputPassword = "";
+
+// 키패드 버튼 클릭 시 처리
+keys.forEach((key) => {
+  key.addEventListener("click", () => {
+    console.log("키 클릭됨:", key.getAttribute("data-value"));  // 클릭된 키 값 출력
+    inputPassword += key.getAttribute("data-value");
+    passwordInput.value = inputPassword;
+  });
+});
+
+// C 버튼 클릭 시
+clearButton.addEventListener("click", () => {
+  console.log("C 버튼 클릭됨");
+  inputPassword = "";
+  passwordInput.value = "";
+  feedback.textContent = "";
+});
+
+// 제출 버튼 클릭 시
+submitButton.addEventListener("click", () => {
+  console.log("제출 버튼 클릭됨");
+  const correctPassword = "4972"; // 예시 비밀번호
+
+  if (inputPassword === correctPassword) {
+    feedback.textContent = "correct password!";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent = "wrong password.";
+    feedback.style.color = "red";
+  }
 });
