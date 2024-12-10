@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keypad</title>
+    <link rel="stylesheet" href="style.css"> <!-- CSS 파일 링크 -->
+</head>
+<body>
+    <div class="keypad">
+        <input type="text" id="input-field" readonly>
+        <div class="keys">
+            <button class="key" data-key="3">3</button>
+            <button class="key" data-key="2">2</button>
+            <button class="key" data-key="8">8</button>
+            <button class="key" data-key="4">4</button>
+            <button class="key" data-key="6">6</button>
+            <button class="key" data-key="0">0</button>
+            <button class="key" data-key="7">7</button>
+            <button class="key" data-key="5">5</button>
+            <button class="key" data-key="1">1</button>
+            <button class="key" data-key="9">9</button>
+            <button class="key" data-action="clear">Clear</button>
+            <button class="key" data-action="submit">Enter</button>
+        </div>
+        <div id="status-message"></div> <!-- 상태 메시지 영역 추가 -->
+    </div>
+    <script src="script.js"></script> <!-- JS 파일 링크 -->
+</body>
+</html>
